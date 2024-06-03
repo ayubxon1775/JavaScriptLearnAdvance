@@ -4,8 +4,193 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+        <!-- Js Async  -->
+    <!-- Qayta qo'ng'iroq - bu boshqa funktsiyaga argument sifatida uzatiladigan funktsiya -->
+    <!-- Ushbu texnika funktsiyaga boshqa funktsiyani chaqirishga imkon beradi -->
+    <!-- Qayta qo'ng'iroq qilish funktsiyasi boshqa funktsiya tugagandan so'ng ishga tushishi mumkin -->
+    <h1>setTimeout</h1>
+    <p id="demo"></p>
+    <p id="demoOne"></p>
+    <script>
+
+       //  JavaScript funksiyalari chaqirilgan ketma-ketlikda bajariladi. Ular belgilangan ketma-ketlikda emas.
+        // function myDisplayer(some) {
+        //     document.getElementById("demo").innerHTML = some
+        // }
+
+        // function myFirst (){
+        //     myDisplayer("Hello")
+        // }
+
+        // function mySecond() {
+        //     myDisplayer("Goodbye")
+        // }
+        // myFirst()
+        // mySecond()
+
+        // function myDisplayer(some) {
+        //   document.getElementById("demoOne").innerHTML = some;
+        // }
+
+        // function myCalculator(num1, num2) {
+        //  let sum = num1 + num2;
+        //    myDisplayer(sum);
+        // }
+        // myCalculator(5, 10)
+
+        // function myDisplayer(something){
+        //     document.getElementById("demo").innerHTML = something
+        // }
+
+        // function myCalculator(num1, num2, myCalback){
+        //     let result = num1+ num2;
+        //     return myCalback(result);
+        // }
+        // myCalculator(5, 5, myDisplayer)
+
+        // const myNumbers = [4, 1, -20, -7, 5, 9, -6];
+        // const posNumbers = removeNeg(myNumbers, (x) => x >= 0)
+        // document.getElementById("demo").innerHTML = posNumbers
+
+        // function removeNeg(numbers, callback){
+        //     const myArray = [];
+        //     for (const x of numbers){
+        //         if(callback(x)){
+        //             myArray.push(x)
+        //         }
+        //     }
+        //     return myArray
+        // }
+
+        // Yuqoridagi misollar juda hayajonli emas.
+        // Ular sizga qayta qo'ng'iroq sintaksisini o'rgatish uchun soddalashtirilgan.
+        // Qayta qo'ng'iroqlar haqiqatan ham asinxron funktsiyalarda porlaydi, bu erda bir
+        //  funktsiya boshqa funktsiyani kutishi kerak (masalan, fayl yuklanishini kutish).
+
+            // JS asinxron
+        // Boshqa funktsiyalar bilan parallel ravishda ishlaydigan funktsiyalar asinxron deb ataladi.
+        // Yaxshi misol - JavaScript setTimeout()
+        // Haqiqiy dunyoda qayta qo'ng'iroqlar ko'pincha asinxron funktsiyalar bilan qo'llaniladi.
+
+        // setTimeout(myFunction, 3000);
+        // function myFunction(){
+        //   document.getElementById("demo").innerHTML = "ayubxon"
+        // }
+
+
+        // setTimeout(function() {
+        //     myFunction("ayubxoon"); 
+        // },3000);
+        
+        // function myFunction (value) {
+        //     document.getElementById("demo").innerHTML = value
+        // }
+
+        // setInterval(myFunction, 1000);
+
+        // function myFunction(){
+        //     let d = new Date();
+        //     document.getElementById("demo").innerHTML = d.getHours() +":"+ d.getMinutes() + ":" + d.getSeconds();
+        // }
+        // Asinxron dasturlash yordamida JavaScript dasturlari uzoq muddatli vazifalarni boshlashi va boshqa vazifalarni 
+        // parallel ravishda bajarishni davom ettirishi mumkin.
+
+        // Biroq, asinxron dasturlarni yozish va disk raskadrovka qilish qiyin.
+
+        // Shu sababli, ko'pgina zamonaviy asinxron JavaScript usullari qayta qo'ng'iroqlardan foydalanmaydi. 
+        // Buning o'rniga, JavaScript-da asinxron dasturlash o'rniga Promises yordamida hal qilinadi .
+       
+                // Promise
+        // Ishlab chiqaruvchi kod natijani olganida, u ikkita qayta qo'ng'iroqdan birini chaqirishi kerak:
+            // 1.Success
+            // 2.Error
+        //JavaScript Promise ob'ekti quyidagilar bo'lishi mumkin:
+            // . Pending - Kutilmoqda
+            // . Fulfilled - Bajarildi
+            // . Rejected - Rad etilgan
+            // Promise obyekti ikkita xususiyatni qo'llab-quvvatlaydi: holat va natija .
+
+            // Promise ob'ekti "kutishda" (ishlayotgan) bo'lsa-da, natija aniqlanmagan.
+
+            // Promise ob'ekti "bajarilgan" bo'lsa, natija qiymat bo'ladi.
+
+            // Promise ob'ekti "rad etilgan" bo'lsa, natija xato ob'ekti bo'ladi.
+
+            // Promise xususiyatlari holati va natijasiga kira olmaysiz .
+
+            // Va'dalarni bajarish uchun Promise usulidan foydalanishingiz kerak.
+
+            // Promise.then() ikkita argumentni oladi, muvaffaqiyat uchun qayta qo'ng'iroq, ikkinchisi esa muvaffaqiyatsizlik uchun.
+            // Ikkalasi ham ixtiyoriy, shuning uchun siz faqat muvaffaqiyat yoki muvaffaqiyatsizlik 
+            // uchun qayta qo'ng'iroqni qo'shishingiz mumkin.
+
+            // function myDisplayer(some) {
+            //     document.getElementById("demo").innerHTML = some
+            // }
+
+            // let myPromise = new Promise(function(myResolve, myReject) {
+            //     let x = 0;
+
+            //     if (x == 0 ){
+            //         myResolve("OK");
+            //     } else {
+            //         myReject("Error");
+            //     }
+            // });
+            // myPromise.then(
+            //     function(value) { myDisplayer(value);},  
+            //     function(error) { myDisplayer(error);}
+            // );
+
+            // JavaScript Promise ga misol
+                // Vaqt tugashi kutilmoqda
+                // Fayl kutilmoqda
+        // Qayta qo'ng'iroqdan foydalanishga misol.
+                // setTimeout(function() {
+                //     myFunction("ayubxon")
+                // },5000);
+                // function myFunction(param) {
+                //     document.getElementById("demo").innerHTML = param
+                // }
+
+
+        // Promise dan foydalanishga misol.
+        
+    //   const myPromise = new Promise(function(param1, param2){
+    //     setTimeout(function(){
+    //         param1("Ayubxoooon")
+    //     },3000)
+    //   })
+    //   myPromise.then(function(value){
+    //     document.getElementById("demo").innerHTML = value
+    //   })
+
+                // JS async/await
+    // async/await Promiselarni yozishni osonlashtiradi.
+        
+        //async Promise funksiyani qaytarishga majbur qiladi.
+        //await Promise funksiyani kutishga majbur qiladi.
+        function Displayer(some){
+            document.getElementById("demo").innerHTML = some
+        }
+
+        async function myFunction(){
+            return "hello"
+        }
+      
+        myFunction().then(
+            function(value) {Displayer(value)},
+            function(error) {Displayer(error)}
+
+        )
+
+
+    </script>
+
+
+    <script src="app.js"></script>
 </body>
 </html>
