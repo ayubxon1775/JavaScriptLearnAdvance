@@ -187,7 +187,38 @@
 
         // )
 
+        // const a = ['Ahmedov', 'Saidov', 'Mutalliyev', 'Karimov' ]
+        // const result = a.map(name =>  name + 'a');
+        // console.log(result);
 
+
+        // let N = Number(prompt("son kiriting"));
+        // if(N % 2===0){
+        //     console.log("juft son");
+        // }else{
+        //     console.log("toq son");
+        // };
+
+        function findUniqueNumber(arr) {
+  for (let num of arr) {
+    if (arr.indexOf(num) === arr.lastIndexOf(num)) {
+      return num;
+    }
+  }
+}
+
+// Misol uchun:
+const arr = [1, 1, 1, 1, 2]
+
+console.log("Yagona qaytirilmaydigan son:", findUniqueNumber(arr));
+
+function nFact(n) {
+    if(n===0 || n===1 ) {return 1}
+   else {
+    return n * nFact(n-1)}
+   }
+   console.log(nFact(5));
+    
     </script>
 
 
